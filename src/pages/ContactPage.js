@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import BackgroundImage from '../images/splash.jpg';
+import BackgroundImage from '../images/splash3.jpg';
 
-export default class HomePage extends Component {
+export default class ContactPage extends Component {
 
   render() {
-    const styleHome = Object.assign(styles.HomePage, {backgroundImage: `url(${this.state.backImgUrl})`});
+    const styleHome = Object.assign({}, styles.ContactPage, {backgroundImage: `url(${this.state.backImgUrl})`});
     return (
-      <div className="HomePage" style={styleHome}>
+      <div className="ContactPage" style={styleHome}>
       </div>
     );
   }
@@ -19,7 +19,7 @@ export default class HomePage extends Component {
 }
 
 const styles = {
-    HomePage: {
+    ContactPage: {
         width: '100%', height: '100%',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
