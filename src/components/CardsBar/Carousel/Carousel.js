@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import './Carousel.css'
 import * as imgGenerator from "../../../utils/imgGenerator"
+import Card from './Card'
 
-class Carousel extends Component {
+export default class Carousel extends Component {
   
   render() {
     return (
-      <div className="Carousel" style={Object.assign({}, this.props.style, styles.Carousel)}>
+      <div className="Carousel NoScrollBar" style={Object.assign({}, this.props.style, styles.Carousel)}>
         { this.buildList(this.props.data) }
       </div>
     );
@@ -15,7 +15,7 @@ class Carousel extends Component {
   buildList = (array)=>{
     return array.map((item, i) => {
             const src = imgGenerator.getCardImageSrc(item);
-            return (<img src={src} alt="A Project" style={styles.item} key={i} onClick={()=>{this.tap(i)}}/>)
+            return (<Card key={i} src={src} style={styles.item}  onClick={()=>{this.tap(i)}}/>)
     });
   }
 
@@ -30,8 +30,6 @@ const styles = {
         overflow: 'auto', whiteSpace: 'nowrap'
     },
     item: {
-        marginRight: '17px', width: '311px', height: '220px', display: 'inline-block'
+        marginRight: '17px', display: 'inline-block'
     }
 }
-
-export default Carousel;

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import CardTopNaviBar from "./CardTopNaviBar/CardTopNaviBar"
 import Carousel from "./Carousel/Carousel"
+import './NoScrollBar.css'
 
-class CardsBar extends Component {
+export default class CardsBar extends Component {
 
   render() {
     const style = Object.assign({}, styles.CardsBar, this.props.style);
     return (
-      <div className="CardsBar" style={style}>
-        <CardTopNaviBar titles={Object.keys(this.props.data)} tap={(title)=>{this.tap(title)}}></CardTopNaviBar>
+      <div className="CardsBar NoScrollBar" style={style}>
+        <CardTopNaviBar titles={Object.keys(this.props.data)} tap={(title)=>{this.tap(title)}} style={styles.CardTopNaviBar}></CardTopNaviBar>
         <Carousel style={styles.Carousel} data={this.state.paths} tap={(i)=>{this.tapCard(i)}}></Carousel>
       </div>
     );
@@ -33,12 +34,17 @@ class CardsBar extends Component {
 }
 
 const styles = {
+
     CardsBar: {
-        display: 'flex', flexDirection: 'column'
+        position:'relative', height: '297px', overflow: 'auto', whiteSpace: 'nowrap'
     },
+
+    CardTopNaviBar: {
+      position: 'absolute', top: '0px'
+    },
+
     Carousel: {
-        marginTop: '26px', marginLeft: '56px'
+      position: 'absolute', bottom: '0px',
+      marginLeft: '56px', width: '100%'
     }
 }
-
-export default CardsBar;

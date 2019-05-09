@@ -38,7 +38,7 @@ const styles = {
         transition: 'background-image 0.4s ease-in-out'
     },
     CardsBar: {
-        marginBottom: '40px'
+        marginBottom: '40px', width: '100%'
     }
 }
 
