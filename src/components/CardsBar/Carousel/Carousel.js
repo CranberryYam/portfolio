@@ -15,7 +15,10 @@ export default class Carousel extends Component {
   buildList = (array)=>{
     return array.map((item, i) => {
             const src = imgGenerator.getCardImageSrc(item);
-            return (<Card key={i} src={src} style={styles.item}  onClick={()=>{this.tap(i)}}/>)
+            const itemOneStyle = this.props.headGap ? Object.assign({}, styles.item, {marginLeft: this.props.headGap})
+                                                    : styles.item;
+            return (<Card key={i} src={src} style={i == 0 ? itemOneStyle : styles.item}  
+                          onClick={()=>{this.tap(i)}}/>)
     });
   }
 
@@ -30,6 +33,6 @@ const styles = {
         overflow: 'auto', whiteSpace: 'nowrap'
     },
     item: {
-        marginRight: '17px', display: 'inline-block'
+        marginRight: '17px', display: 'inline-block', marginBottom: '30px'
     }
 }

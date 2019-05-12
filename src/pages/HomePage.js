@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import CardsBar from '../components/CardsBar/CradsBar'
 import * as imgGenerator from "../utils/imgGenerator"
 
+import Card from "../components/CardsBar/Carousel/Card"
+
 export default class HomePage extends Component {
 
   render() {
     const styleHome = Object.assign({}, styles.HomePage, {backgroundImage: this.state.backImgUrl});
     return (
       <div className="HomePage" style={styleHome}>
+        {/* <Card src={imgGenerator.getCardImageSrc(0)} style={{marginBottom: '40px'}}/> */}
         <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
                   tapCard={(title, i)=>{this.changeBackground(title, i)}}></CardsBar>
       </div>
@@ -38,7 +41,7 @@ const styles = {
         transition: 'background-image 0.4s ease-in-out'
     },
     CardsBar: {
-        marginBottom: '40px', width: '100%'
+        marginBottom: '-26px', width: '100%'
     }
 }
 

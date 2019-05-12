@@ -4,24 +4,27 @@ export default class Card extends Component {
 
   constructor(props){
     super(props);
-    this.state = {styles: normalStyle};
+    this.state = {styles: normalStyle, isHover: false};
   }
 
   render() {
+    const styles = this.state.isHover ? hoverStyle : normalStyle;
+    const title = this.props.text ? this.props.text : 'No Title';
     return (
       <div className="Card" style={this.props.style}>
-        <img alt="A Project" src={this.props.src} style={this.state.styles.img}
-           onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+        <img alt="A Project" src={this.props.src} style={styles.img}
+             onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+        <div className="TitleLabel" style={styles.TitleLabel}>{title}</div>
       </div>
     );
   }
 
   handleMouseEnter = ()=>{
-    this.setState({ styles: hoverStyle });
+    this.setState({ isHover: true });
   }
 
   handleMouseLeave = ()=>{
-    this.setState({ styles: normalStyle });
+    this.setState({ isHover: false });
   }
 
 }
@@ -31,6 +34,9 @@ const normalStyle = {
     transition: 'all .2s ease-in-out', 
     overflowY: 'visible',
     width: '311px', height: '220px',
+  },
+  TitleLabel: {
+    height: '24px', fontSize: '21', opacity: 0.0, textAlign: 'center'
   }
 }
 
@@ -39,5 +45,11 @@ const hoverStyle = {
     transition: 'all .2s ease-in-out', 
     overflowY: 'visible',
     width: '363px', height: '257px',
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    MozBoxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    WebkitBoxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+  },
+  TitleLabel: {
+    height: '24px', fontSize: '21px', opacity: 1.0, textAlign: 'center'
   }
 }

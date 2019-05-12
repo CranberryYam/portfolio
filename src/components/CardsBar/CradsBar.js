@@ -10,7 +10,8 @@ export default class CardsBar extends Component {
     return (
       <div className="CardsBar NoScrollBar" style={style}>
         <CardTopNaviBar titles={Object.keys(this.props.data)} tap={(title)=>{this.tap(title)}} style={styles.CardTopNaviBar}></CardTopNaviBar>
-        <Carousel style={styles.Carousel} data={this.state.paths} tap={(i)=>{this.tapCard(i)}}></Carousel>
+        <Carousel style={styles.Carousel} data={this.state.paths} tap={(i)=>{this.tapCard(i)}}
+                  headGap='56px'></Carousel>
       </div>
     );
   }
@@ -36,15 +37,15 @@ export default class CardsBar extends Component {
 const styles = {
 
     CardsBar: {
-        position:'relative', height: '297px', overflow: 'auto', whiteSpace: 'nowrap'
+        position:'relative', height: '360px', overflow: 'auto', whiteSpace: 'nowrap'
     },
 
     CardTopNaviBar: {
-      position: 'absolute', top: '0px'
+      position: 'absolute', top: '0px', marginLeft: '56px'
     },
 
     Carousel: {
       position: 'absolute', bottom: '0px',
-      marginLeft: '56px', width: '100%'
+      marginLeft: '0px', width: '100%'
     }
 }

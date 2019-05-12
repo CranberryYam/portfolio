@@ -35,7 +35,7 @@ class CardTopNaviBar extends Component {
 
 const styles = {
     CardTopNaviBar: {
-        display: 'flex', flexDirection: 'row', marginLeft: '56px'
+        display: 'flex', flexDirection: 'row'
     },
     Title: {
         marginRight: '42px'
