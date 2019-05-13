@@ -3,6 +3,7 @@ import CardsBar from '../components/CardsBar/CradsBar'
 import * as imgGenerator from "../utils/imgGenerator"
 
 import Card from "../components/CardsBar/Carousel/Card"
+import Carousel from '../components/CardsBar/Carousel/Carousel'
 
 export default class HomePage extends Component {
 
@@ -13,6 +14,8 @@ export default class HomePage extends Component {
         {/* <Card src={imgGenerator.getCardImageSrc(0)} style={{marginBottom: '40px'}}/> */}
         <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
                   tapCard={(title, i)=>{this.changeBackground(title, i)}}></CardsBar>
+        <Carousel style={styles.Carousel} data={this.state.cardsBarData['UX Design']} tap={(i)=>{this.tapCard(i)}}
+                  headGap='56px'></Carousel>
       </div>
     );
   }

@@ -10,7 +10,6 @@ export default class AboutPage extends Component {
       </div>
     );
   }
-
   constructor(props) {
       super(props);
       this.state = { backImgUrl: imgGenerator.getCoverImageUrl('2') };

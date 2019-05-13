@@ -3,6 +3,8 @@ import CardTopNaviBar from "./CardTopNaviBar/CardTopNaviBar"
 import Carousel from "./Carousel/Carousel"
 import './NoScrollBar.css'
 
+import TwoButtons from './Carousel/TwoButtons'
+
 export default class CardsBar extends Component {
 
   render() {
@@ -46,6 +48,6 @@ const styles = {
 
     Carousel: {
       position: 'absolute', bottom: '0px',
-      marginLeft: '0px', width: '100%'
+      marginLeft: '0px', width: '100%', height: '274px'
     }
 }

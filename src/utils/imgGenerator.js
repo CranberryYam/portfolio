@@ -8,4 +8,9 @@ function getCoverImageUrl(name) {
     return `url(${src})`;
 }
 
+function getImgSrcByName(name) {
+    const src = require('../images/' + name + '.png');
+    return src;
+}
+
 export {getCardImageSrc, getCoverImageUrl};
