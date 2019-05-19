@@ -8,17 +8,15 @@ export default class Carousel extends Component {
   
   render() {
     return (
-      <div style={Object.assign({}, this.props.style, styles.Carousel)}>
+      <div className="Carousel" style={Object.assign({}, this.props.style, styles.Carousel)}>
         <ArrowButton style={styles.ArrowButton}/>
 
-        <div style={{position: 'relative', width: '100%', height: '274px'}}>
-          <div className="Carousel NoScrollBar" style={styles.ItemList}>
-            { this.buildList(this.props.data) }
-          </div>
+        <div className="ItemList NoScrollBar" style={styles.ItemList}>
+          { this.buildList(this.props.data) }
         </div>
 
         <ArrowButton reverse={true} style={styles.ArrowButton2}/>
-        {/* <TwoButtons style={styles.TwoButtons}/> */}
+
       </div>
     );
   }
@@ -42,17 +40,17 @@ export default class Carousel extends Component {
 
 const styles = {
     Carousel: {
-      display: 'flex', flexDirection: 'row', height: '281px'
+      display: 'flex', flexDirection: 'row'
     },
     ArrowButton: {
-      height: '220px', width: '52px', marginLeft: '18px'
+      height: '220px', marginLeft: '18px', marginRight: '4px', marginTop: '37px'
     },
     ArrowButton2: {
-      height: '220px', width: '42px', marginRight: '18px', marginLeft: '4px'
+      height: '220px', marginRight: '4px', marginLeft: '4px', marginTop: '37px', 
+      zIndex: '2'
     },
     ItemList: {
-        overflow: 'auto', whiteSpace: 'nowrap', width: '100%', height: '274px', 
-        position: 'absolute', bottom: '0px'
+        overflow: 'auto', whiteSpace: 'nowrap', width: 'calc(~"100vm - 51px")'
     },
     item: {
         marginRight: '17px', display: 'inline-block', marginBottom: '30px'

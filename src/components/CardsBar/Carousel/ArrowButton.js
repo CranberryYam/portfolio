@@ -13,7 +13,8 @@ export default function ArrowButton(props) {
 
 const styles = {
     ArrowButton: {
-        display: 'flex', flexDirection: 'column', justifyContent: 'center'
+        display: 'flex', flexDirection: 'column', justifyContent: 'center', 
+        background: 'rgba(0, 151, 19, 0.0)'
     },
     img: {
         width: '35px', height: '35px'

@@ -32,8 +32,8 @@ export default class Card extends Component {
 const normalStyle = {
   img: {
     transition: 'all .2s ease-in-out', 
-    overflowY: 'visible',
     width: '311px', height: '220px',
+    marginTop: '37px'
   },
   TitleLabel: {
     height: '24px', fontSize: '21', opacity: 0.0, textAlign: 'center'
@@ -43,11 +43,11 @@ const normalStyle = {
 const hoverStyle = {
   img: {
     transition: 'all .2s ease-in-out', 
-    overflowY: 'visible',
     width: '363px', height: '257px',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     MozBoxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-    WebkitBoxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+    WebkitBoxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    marginTop: '0px'
   },
   TitleLabel: {
     height: '24px', fontSize: '21px', opacity: 1.0, textAlign: 'center'
