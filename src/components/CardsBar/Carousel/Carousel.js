@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import * as imgGenerator from "../../../utils/imgGenerator"
 import Card from './Card'
-import TwoButtons from './TwoButtons'
 import ArrowButton from './ArrowButton'
 
 export default class Carousel extends Component {

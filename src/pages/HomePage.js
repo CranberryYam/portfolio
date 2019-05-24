@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import CardsBar from '../components/CardsBar/CradsBar'
 import * as imgGenerator from "../utils/imgGenerator"
-
-import Card from "../components/CardsBar/Carousel/Card"
 import Carousel from '../components/CardsBar/Carousel/Carousel'
 
 export default class HomePage extends Component {

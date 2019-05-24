@@ -3,8 +3,6 @@ import CardTopNaviBar from "./CardTopNaviBar/CardTopNaviBar"
 import Carousel from "./Carousel/Carousel"
 import './NoScrollBar.css'
 
-import TwoButtons from './Carousel/TwoButtons'
-
 export default class CardsBar extends Component {
 
   render() {
