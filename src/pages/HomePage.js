@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import * as imgGenerator from "../utils/imgGenerator"
-import Carousel from '../components/CardsBar/Carousel/Carousel'
+import CardsBar from '../components/CardsBar/CradsBar'
 
 export default class HomePage extends Component {
 
@@ -8,11 +8,8 @@ export default class HomePage extends Component {
     const styleHome = Object.assign({}, styles.HomePage, {backgroundImage: this.state.backImgUrl});
     return (
       <div className="HomePage" style={styleHome}>
-        {/* <Card src={imgGenerator.getCardImageSrc(0)} style={{marginBottom: '40px'}}/> */}
-        {/* <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
-                  tapCard={(title, i)=>{this.changeBackground(title, i)}}></CardsBar> */}
-        <Carousel  data={this.state.cardsBarData['UX Design']} tap={(i)=>{this.tapCard(i)}}
-                  headGap='56px'></Carousel>
+        <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
+                  tapCard={(title, i)=>{this.changeBackground(title, i)}}></CardsBar>
       </div>
     );
   }
