@@ -2,19 +2,27 @@ import React, { Component } from 'react'
 import * as imgGenerator from "../../../utils/imgGenerator"
 import Card from './Card'
 import ArrowButton from './ArrowButton'
+import ArrowButton2 from './ArrowButton2'
+import '../NoScrollBar.css'
 
 export default class Carousel extends Component {
+
+  constructor(props) {
+    super(props);
+    this.itemList = React.createRef();
+  }
   
   render() {
     return (
       <div className="Carousel" style={Object.assign({}, this.props.style, styles.Carousel)}>
-        <ArrowButton style={styles.ArrowButton}/>
+        <ArrowButton style={styles.ArrowButton} onClick={this.tapArrowBtn.bind(this, true)}/>
 
-        <div className="ItemList NoScrollBar" style={styles.ItemList}>
+        <div className="ItemList NoScrollBar" style={styles.ItemList} ref={this.itemList}>
           { this.buildList(this.props.data) }
         </div>
 
-        <ArrowButton reverse={true} style={styles.ArrowButton2}/>
+        <ArrowButton2 reverse={true} style={styles.ArrowButton2} 
+                     onClick={this.tapArrowBtn.bind(this, false)}/>
 
       </div>
     );
@@ -35,6 +43,11 @@ export default class Carousel extends Component {
     if(this.props.tap) this.props.tap(data);
   }
 
+  tapArrowBtn = (isLeft) => {
+    const el = this.itemList.current;
+    isLeft ? el.scrollTo(0, 0) : el.scrollTo(4000,0);
+  }
+
 }
 
 const styles = {
@@ -45,11 +58,10 @@ const styles = {
       height: '220px', marginLeft: '18px', marginRight: '4px', marginTop: '37px'
     },
     ArrowButton2: {
-      height: '220px', marginRight: '4px', marginLeft: '4px', marginTop: '37px', 
-      zIndex: '2'
+      height: '220px',  marginTop: '37px',
     },
     ItemList: {
-        overflow: 'auto', whiteSpace: 'nowrap', width: 'calc(~"100vm - 51px")'
+        overflowX: 'scroll', whiteSpace: 'nowrap', overflowY: 'hidden', scrollBehavior: 'smooth'
     },
     item: {
         marginRight: '17px', display: 'inline-block', marginBottom: '30px'
