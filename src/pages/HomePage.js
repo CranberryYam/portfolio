@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as imgGenerator from "../utils/imgGenerator"
 import CardsBar from '../components/CardsBar/CradsBar'
+import Intro from '../components/Intro/Intro'
 
 export default class HomePage extends Component {
 
@@ -10,13 +11,14 @@ export default class HomePage extends Component {
       <div className="HomePage" style={styleHome}>
         <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
                   tapCard={(title, i)=>{this.changeBackground(title, i)}}></CardsBar>
+        <Intro/>
       </div>
     );
   }
 
   constructor(props) {
       super(props);
-      this.state = { backImgUrl: imgGenerator.getCoverImageUrl(1),
+      this.state = { backImgUrl: imgGenerator.getCoverImageUrl(2),
                      cardsBarData: cardsBarData};
   }
 

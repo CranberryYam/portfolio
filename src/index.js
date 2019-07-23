@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ContactPage from './pages/ContactPage';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+if(window.innerWidth <= 760) {
+    ReactDOM.render(<ContactPage />, document.getElementById('root'));
+} else {
+    ReactDOM.render(<App />, document.getElementById('root'));
+}
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
