@@ -34,7 +34,7 @@ export default class Carousel extends Component {
             // const itemOneStyle = this.props.headGap ? Object.assign({}, styles.item, {marginLeft: this.props.headGap})
             //                                         : styles.item;
             const itemOneStyle =  styles.item;
-            return (<Card key={i} src={src} style={i == 0 ? itemOneStyle : styles.item}  
+            return (<Card key={i} src={src} style={i === 0 ? itemOneStyle : styles.item}  
                           onClick={()=>{this.tap(i)}}/>)
     });
   }
@@ -64,6 +64,6 @@ const styles = {
         overflowX: 'scroll', whiteSpace: 'nowrap', overflowY: 'hidden', scrollBehavior: 'smooth'
     },
     item: {
-        marginRight: '17px', display: 'inline-block', marginBottom: '30px'
+        marginRight: '17px', display: 'inline-block'
     }
 }

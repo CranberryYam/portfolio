@@ -37,7 +37,7 @@ export default class CardsBar extends Component {
 const styles = {
 
     CardsBar: {
-        position:'relative', height: '360px', overflow: 'auto', whiteSpace: 'nowrap',
+        position:'relative', height: '341px', overflow: 'auto', whiteSpace: 'nowrap',
     },
 
     CardTopNaviBar: {
@@ -46,6 +46,6 @@ const styles = {
 
     Carousel: {
       position: 'absolute', bottom: '0px',
-      marginLeft: '0px', width: '100%', height: '319px',
+      marginLeft: '0px', width: '100%', height: '300px',
     }
 }

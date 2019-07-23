@@ -4,7 +4,7 @@ export default class Card extends Component {
 
   constructor(props){
     super(props);
-    this.state = {styles: normalStyle, isHover: false};
+    this.state = {styles: normalStyle, isHover: false, onClick: props.onClick};
   }
 
   render() {
@@ -13,7 +13,8 @@ export default class Card extends Component {
     return (
       <div className="Card" style={this.props.style}>
         <img alt="A Project" src={this.props.src} style={styles.img}
-             onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+             onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}
+             onClick={this.state.onClick}/>
         <div className="TitleLabel" style={styles.TitleLabel}>{title}</div>
       </div>
     );

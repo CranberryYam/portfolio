@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import NaviBar from './components/NaviBar/NaviBar';
+import NaviBar from './components/NaviBar/NaviBar'
+import * as imgGenerator from "./utils/imgGenerator"
 
 class App extends Component {
   render() {
+    const style = Object.assign({}, styles.App, {backgroundImage: this.state.backImgUrl});
     return (
-      <div className="App" style={styles.App}>
+      <div className="App" style={style}>
           <NaviBar tap={this.switchToTap.bind(this)}/>          
           {this.state.mainPage}
       </div>
@@ -16,12 +17,20 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { mainPage: (<HomePage />)};
-    this.tabs = [(<HomePage/>), (<AboutPage/>), (<ContactPage/>)];
+    this.state = { mainPage: (<HomePage />), backImgUrl: imgGenerator.getCoverImageUrl('Home')};
+    this.pages = [(<HomePage/>), (<ContactPage/>)];
+    this.covers = ['Home', 'Contact']
   }
 
   switchToTap(i) {
-    this.setState({mainPage: this.tabs[i]});
+    if (i >= 2) {
+      const url = 'https://drive.google.com/file/d/1XCZ0_45UOkuCTiXQ4uOMMcL7MVzSMr_w/view?usp=sharing';
+      window.open(url, '_blank');
+      return;
+    }
+    const page = this.pages[i];
+    const cover = imgGenerator.getCoverImageUrl(this.covers[i]);
+    this.setState({mainPage: page, backImgUrl: cover});
   }
 }
 
@@ -29,7 +38,13 @@ class App extends Component {
 
 const styles = {
   App: {
-    width: '100%', height: '100%'
+    width: '100%', height: '100%',
+    backgroundPosition: 'left top',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        WebkitTransition: 'background-image 0.2s ease-in-out',
+        transition: 'background-image 0.2s ease-in-out',
+
   }
 }
 

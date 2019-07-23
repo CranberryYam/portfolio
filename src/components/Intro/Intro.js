@@ -4,10 +4,10 @@ export default class Intro extends Component {
   
   render() {
     return (
-      <div className="Intro" style={styles.Intro}>
+      <div className="Intro" style={Object.assign({}, styles.Intro, this.props.style)}>
         <div className="Title" style={styles.Title}> {this.state.title} </div>
         <div className="Content" style={styles.Content}> {this.state.content} </div>
-        <div className="Button" style={styles.Button}>Resume</div>
+        {/* <div className="Button" style={styles.Button}>Resume</div> */}
       </div>
     );
   }
@@ -25,10 +25,10 @@ const styles = {
         display: 'flex', flexDirection: 'column', marginLeft: '54px', marginBottom: '0px'
     },
     Title: {
-        fontSize: '31px', marginBottom: '45px'
+        fontSize: '40px', marginBottom: '45px'
     },
     Content: {
-        fontSize: '22px', marginBottom: '35px', whiteSpace: 'pre-line'
+        fontSize: '28px', marginBottom: '45px', whiteSpace: 'pre-line'
     },
     Button: {
         fontSize: '22px', background: 'rgba(0, 0, 0, 1.0)', color: 'white',

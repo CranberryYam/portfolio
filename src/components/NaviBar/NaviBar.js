@@ -8,7 +8,7 @@ export default class NaviBar extends Component {
       <div className="NaviBar" style={styles.NaviBar}>
         <div className="Logo" style={styles.Logo}>Henry Yi</div>
         <div className="Titles" style={styles.Titles}> 
-           {this.buildTabs(['Portfolio', 'About', 'Contact'])}
+           {this.buildTabs(['Portfolio', 'Contact', 'Resume'])}
         </div>
       </div>
     );
