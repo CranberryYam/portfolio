@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import CardsBar from '../components/CardsBar/CradsBar'
-import { cardsBarData, linksData } from '../utils/dataProvider'
+import { projectsData, linksData } from '../utils/dataProvider'
 
 export default class HomePage extends Component {
 
   render() {
     return (
       <div className="HomePage" style={styles.HomePage}>
-        <CardsBar style={styles.CardsBar} data={this.state.cardsBarData} 
+        <CardsBar style={styles.CardsBar} data={this.state.projectsData} 
                   tapCard={(title, i)=>{this.openLink(title, i)}}></CardsBar>
       </div>
     );
@@ -15,12 +15,12 @@ export default class HomePage extends Component {
 
   constructor(props) {
       super(props);
-      this.state = { cardsBarData: cardsBarData };
+      this.state = { projectsData: projectsData };
   }
 
   openLink(title, cardIndex) {
     console.log(title, cardIndex);
-    const url = linksData[title][cardIndex];
+    const url = projectsData[title][cardIndex].link;
     window.open(url, '_blank');
   }
 

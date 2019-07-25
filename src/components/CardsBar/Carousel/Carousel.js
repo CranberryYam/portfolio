@@ -30,11 +30,12 @@ export default class Carousel extends Component {
 
   buildList = (array)=>{
     return array.map((item, i) => {
-            const src = imgGenerator.getCardImageSrc(item);
+            const src = imgGenerator.getCardImageSrc(item.image);
             // const itemOneStyle = this.props.headGap ? Object.assign({}, styles.item, {marginLeft: this.props.headGap})
             //                                         : styles.item;
             const itemOneStyle =  styles.item;
-            return (<Card key={i} src={src} style={i === 0 ? itemOneStyle : styles.item}  
+            return (<Card key={i} src={src} text={item.text}
+                          style={i === 0 ? itemOneStyle : styles.item}  
                           onClick={()=>{this.tap(i)}}/>)
     });
   }

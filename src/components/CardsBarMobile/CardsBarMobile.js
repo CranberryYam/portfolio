@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as imgGenerator from "../../utils/imgGenerator"
 import NaviBar from './NaviBar'
-import { cardsBarData, linksData } from '../../utils/dataProvider'
+import { projectsData, linksData } from '../../utils/dataProvider'
 
 
 export default class CardsBarMobile extends Component {
@@ -10,7 +10,7 @@ export default class CardsBarMobile extends Component {
     const style = Object.assign({}, styles.CardsBarMobile, this.props.style);
     return (
       <div className='CardsBarMobile NoScrollBar' style={style}>
-        <NaviBar  titles={Object.keys(cardsBarData)} tap={(title)=>{this.tap(title)}} style={styles.CardTopNaviBar}/>
+        <NaviBar  titles={Object.keys(projectsData)} tap={(title)=>{this.tap(title)}} style={styles.CardTopNaviBar}/>
         <div className='Cards'> {this.buildList(this.state.paths)} </div>
       </div>
     );
@@ -18,13 +18,13 @@ export default class CardsBarMobile extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { curentTitle: Object.keys(cardsBarData)[0],
-                   paths: Object.values(cardsBarData)[0]};
+    this.state = { curentTitle: Object.keys(projectsData)[0],
+                   paths: Object.values(projectsData)[0]};
   }
 
   buildList = (array)=>{
     return array.map((item, i) => {
-            const src = imgGenerator.getCardImageSrc(item);
+            const src = imgGenerator.getCardImageSrc(item.image);
             return (<img key={i} src={src} alt='A Project' style={styles.Card}  
                          onClick={()=>{this.tapCard(i)}}/>)
     });
@@ -32,12 +32,12 @@ export default class CardsBarMobile extends Component {
 
   /** tap for tap navibar */
   tap = (index)=>{
-    this.setState({curentTitle: Object.keys(cardsBarData)[0],
-                   paths: Object.values(cardsBarData)[index]});
+    this.setState({curentTitle: Object.keys(projectsData)[index],
+                   paths: Object.values(projectsData)[index]});
   }
 
   tapCard = (cardIndex)=>{
-    const url = linksData[this.state.curentTitle][cardIndex];
+    const url = projectsData[this.state.curentTitle][cardIndex].link;
     window.open(url, '_blank');
   }
   
