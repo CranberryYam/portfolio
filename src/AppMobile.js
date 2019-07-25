@@ -30,8 +30,8 @@ const styles = {
     },
 
     NameTag: {
-      width: '107px', height: '31px',
-      marginTop: '12px', marginBottom: '20px'
+      width: '108px', height: '23px',
+      marginTop: '14px', marginBottom: '20px'
     },
 
     CardsBarMobile: {
