@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import ContactPage from './pages/ContactPage';
+import AppMobile from './AppMobile';
 
 if(window.innerWidth <= 760) {
-    ReactDOM.render(<ContactPage />, document.getElementById('root'));
+    ReactDOM.render(<AppMobile />, document.getElementById('root'));
 } else {
     ReactDOM.render(<App />, document.getElementById('root'));
 }

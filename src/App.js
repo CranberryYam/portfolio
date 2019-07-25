@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import NaviBar from './components/NaviBar/NaviBar'
 import * as imgGenerator from "./utils/imgGenerator"
+import { resumeLink } from './utils/dataProvider'
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
 
   switchToTap(i) {
     if (i >= 2) {
-      const url = 'https://drive.google.com/file/d/1XCZ0_45UOkuCTiXQ4uOMMcL7MVzSMr_w/view?usp=sharing';
+      const url = resumeLink;
       window.open(url, '_blank');
       return;
     }
