@@ -1,19 +1,27 @@
-const cardsBarData = {'UX Design': ['Squeeze', 1, 2, 2, 1, 'Squeeze', 1, 2], 'Coding': [2, 'Squeeze', 1, 2]};
+const covers1 = ['Horder', 'Flyingcar', 'Jill', 'Stressapp', 'Studentloan', 'Pascal'];
 
-const group1 = ['https://www.thebalancecareers.com/google-docs-resumes-2062719','https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
+const covers2 = ['Hyrouter', 'Chicsketch', 'Bpsystem', 'Squeezeit', 'Stress'];
+
+const links1 = [
+'https://medium.com/henry-yi/horder-another-tinder-but-for-horses-a3d76384c2a1',
+'https://medium.com/henry-yi/design-the-flying-car-in-2030-6636672db1a2',
+'https://medium.com/henry-yi/jill-your-personal-wardrobe-66fbeee3ada1',
+'https://medium.com/henry-yi/stress-app-9904021223e7',
+'https://medium.com/henry-yi/college-search-cc1baa87d3bc',
+'https://medium.com/henry-yi/pascal-presentation-912a25f80e5c'
 ];
-const group2 = ['https://www.thebalancecareers.com/google-docs-resumes-2062719','https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719',
-'https://www.thebalancecareers.com/google-docs-resumes-2062719'];
 
-const linksData = {'UX Design': group1, 'Coding': group2};
+const links2 = [
+'https://github.com/CranberryYam/HYRouter',
+'https://github.com/CranberryYam/HYRouter',
+'https://github.com/CranberryYam/HYRouter',
+'https://github.com/CranberryYam/HYRouter',
+'https://github.com/CranberryYam/HYRouter'
+];
 
+
+const cardsBarData = {'UX Design': covers1, 'Coding': covers2};
+const linksData = {'UX Design': links1, 'Coding': links2};
 const resumeLink = 'https://drive.google.com/file/d/1XCZ0_45UOkuCTiXQ4uOMMcL7MVzSMr_w/view?usp=sharing';
 
 export {cardsBarData, linksData, resumeLink}

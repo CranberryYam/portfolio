@@ -24,7 +24,7 @@ export default class CardsBar extends Component {
 
   /** tap for tap navibar */
   tap = (index)=>{
-    this.setState({curentTitle: Object.keys(this.props.data)[0],
+    this.setState({curentTitle: Object.keys(this.props.data)[index],
                    paths: Object.values(this.props.data)[index]});
   }
 
